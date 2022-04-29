@@ -79,7 +79,7 @@ class ContactGroupController extends Controller
     {
         $this->contactgroupRepoInterface->delete($contactgroup);
 
-        return redirect()->route('contactgroup.index')->with('message', 'Deleted');
+        return redirect()->route('contactgroup.index');
     }
 
     public function callhelper()
@@ -93,8 +93,8 @@ class ContactGroupController extends Controller
         // dd($token);
         $data = Helpers::ContactGrouplist($token);
 
-        dd($data);
+        // dd($data);
 
-        return redirect()->back();
+        return redirect()->back()->with('message', $data);
     }
 }

@@ -31,14 +31,15 @@ class Helpers
             $data = $userid->user_id;
 
         }
+        // dump($auth_id);
+        // dd($data);
         // dd($data);
 
         // dd($data);
+
         if (isset($data)) {
-
             if ($auth_id == $data) {
             }
-
         } else {
 
             $url_people = 'https://people.googleapis.com/v1/contactGroups';

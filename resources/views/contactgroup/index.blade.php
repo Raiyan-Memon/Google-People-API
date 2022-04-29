@@ -1,14 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session()->has('message'))
+<script>alert("API Fetched Successfully");</script>
+@endif
 <style>
 
   form{
     display: inline-block
   }
 
+
 </style>
 {{-- @dd($contactgroup['resourceName']); --}}
+
+
 
 <div class="container">
 
@@ -29,21 +35,25 @@
         </thead>
         <tbody>
 
+    
+        
+
+
           @foreach($contactgroup as $contactgroups)
           <tr>
-            <td>{{$contactgroups->formattedName}}</td>
-            <td>{{$contactgroups->resourceName}}</td>
+            <td >{{$contactgroups->formattedName}}</td>
+            <td >{{$contactgroups->resourceName}}</td>
             {{-- <td>{{$contactgroups->user_id}}</td> --}}
 
             <td>
-              <a href="{{route('contactgroup.show', $contactgroups->id)}}"> <Button class="btn btn-success" onclick="myfunction()">Show</Button></a>
-              <a href="{{route('contactgroup.edit', $contactgroups->id)}}"> <Button class="btn btn-primary" onclick="myfunction()">Edit</Button></a>
+              <a  href="{{route('contactgroup.show', $contactgroups->id)}}"> <Button class="btn btn-success" onclick="myfunction()">Show</Button></a>
+              <a  href="{{route('contactgroup.edit', $contactgroups->id)}}"> <Button class="btn btn-primary" onclick="myfunction()">Edit</Button></a>
               <span>
               
                     <form action="{{route('contactgroup.destroy' ,$contactgroups->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <a> <button class="btn btn-danger">Delete</button></a>
+                    <a > <button class="btn btn-danger">Delete</button></a>
                 </form>
               
             </span>
