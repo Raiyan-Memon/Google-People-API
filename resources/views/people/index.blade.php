@@ -18,28 +18,32 @@
 .container{
   position: relative;
   top: 35px;
-    height: 700px;
+  height: 700px;
   width: 1000px;
 }
+
 
 
 </style>
 {{-- @dd($contactgroup['resourceName']); --}}
 
-
+{{-- 
+@dd($people); --}}
 
 <div class="container">
 
-    <h2 class="text-center">Contact Groups</h2>
+    <h2 class="text-center">Contacts</h2>
     <hr>
-   <a href="contactgroup/create" > <button class="btn btn-primary" >Create</button></a><a style="margin-left:80%;" href="{{route('contactgrouplist')}}" class="btn btn-primary">Sync Data</a>
+   <a href="contactgroup/create" > <button class="btn btn-primary" >Create</button></a>
+   <a style="margin-left:80%;" href="{{route('peoplelist')}}" class="btn btn-primary">Sync Data</a>
     {{-- <h4 class="text-center" ><u>List</u></h4> --}}
 
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Name</th>
+            
             <th scope="col">Resource Name</th>
+            <th scope="col">Etag</th>
             {{-- <th scope="col">User_id</th> --}}
             <th scope="col">Action</th>
            
@@ -47,22 +51,22 @@
         </thead>
         <tbody>
         
-          @php
+          {{-- @php
             
            $data = $contactgroup['0'] ?? null;
           //  dd($data);
-          @endphp
+          @endphp --}}
 
-
+{{-- 
 @if(empty($data))
 <td><td>
   <div class="alert alert-danger">{{"List is empty"}}</div></td></td>
-@endif
+@endif --}}
 
-          @foreach($contactgroup as $contactgroups)
+          @foreach($people as $contactgroups)
           <tr>
-            <td >  <a  href="{{route('contactgroup.show', $contactgroups->id)}}"> {{$contactgroups->formattedName}}</a></td>
-            <td >{{$contactgroups->resourceName}}</td>
+            <td >  <a  href="{{route('contactgroup.show', $contactgroups->id)}}"> {{$contactgroups->name}}</a></td>
+            <td >{{$contactgroups->etag}}</td>
             {{-- <td>{{$contactgroups->user_id}}</td> --}}
 
             <td>
@@ -84,7 +88,28 @@
         </tbody>
       </table>
 
+      <span>
+        {{$people->links()}}
+       </span>
 
+       <style>
+   
+  
+
+
+        .text-sm.text-gray-700.leading-5{
+       
+          display: inline-block;
+        }
+      
+      .font-medium{
+        display: inline;
+      }
+        .w-5{
+          display: none;
+        }
+   
+        </style>
 
       
 
@@ -107,3 +132,13 @@
 
 
 @endsection
+
+
+
+
+
+{{-- <a style="margin-left:80%;" href="{{route('othercontactlist')}}" class="btn btn-primary">Sync Data</a> --}}
+
+
+{{-- <a style="margin-left:80%;" href="{{route('peoplelist')}}" class="btn btn-primary">Sync Data</a> --}}
+{{-- @dd($people); --}}

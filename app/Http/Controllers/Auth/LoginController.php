@@ -48,6 +48,7 @@ class LoginController extends Controller
 
         return Socialite::driver('google')
             ->scopes(['https://www.googleapis.com/auth/contacts'])
+            ->scopes(['https://www.googleapis.com/auth/contacts.other.readonly'])
             ->redirect();
     }
 

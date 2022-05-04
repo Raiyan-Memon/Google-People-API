@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Interface\Modules\ContactGroupRepositoryInterface;
 use Helpers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ContactGroupController extends Controller
 {
@@ -13,6 +13,7 @@ class ContactGroupController extends Controller
     {
 
         // $this->middleware('auth');
+        $this->middleware('auth');
         $this->contactgroupRepoInterface = $contactgroupRepoInterface;
     }
 
@@ -86,15 +87,18 @@ class ContactGroupController extends Controller
     {
         // $user = Socialite::driver('google')->user();
 
-        $user = DB::select('select * from users');
-        foreach ($user as $access_token) {
-            $token = $access_token->access_token;
-        }
+        // $user = DB::select('select * from users');
+        // foreach ($user as $access_token) {
+        //     $token = $access_token->access_token;
+        // }
         // dd($token);
-        $data = Helpers::ContactGrouplist($token);
+        $token = Auth::user()->access_token;
+        $contactgrouplist = Helpers::ContactGrouplist($token);
+        $refreshToken = Auth::user()->refresh_token;
 
         // dd($data);
+        // dd($token);
 
-        return redirect()->back()->with('message', $data);
+        return redirect()->back()->with('message', $contactgrouplist);
     }
 }
