@@ -34,7 +34,7 @@
 
     <h2 class="text-center">Contacts</h2>
     <hr>
-   <a href="contactgroup/create" > <button class="btn btn-primary" >Create</button></a>
+   {{-- <a href="contactgroup/create" > <button class="btn btn-primary" >Create</button></a> --}}
    <a style="margin-left:80%;" href="{{route('peoplelist')}}" class="btn btn-primary">Sync Data</a>
     {{-- <h4 class="text-center" ><u>List</u></h4> --}}
 
