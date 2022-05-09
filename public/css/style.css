@@ -63,6 +63,10 @@ body{
     color: #fff;
 }
 
+.navigation ul li.active{
+    background: #4187f6;
+}
+
 .navigation ul li.active a::before{
     content: '';
     position: absolute;

@@ -47,7 +47,7 @@
     <!-- side bar  -->
     <div class="navigation">
         <ul>
-            <li class="username">
+            <li class="username active">
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="log-in-outline"></ion-icon>
@@ -64,7 +64,7 @@
                     <span class="title">Profile</span>
                 </a>
             </li>
-            <li class="list  ">
+            <li class="list">
                 <a href="/people">
                     <span class="icon">
                         <ion-icon name="person-circle-outline"></ion-icon>
@@ -72,7 +72,7 @@
                     <span class="title">Contacts</span>
                 </a>
             </li>
-            <li class="list active">
+            <li class="list ">
                 <a href="/contactgroup">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
@@ -143,7 +143,7 @@
 
 
 
-    <script src="script.js"></script>
+   
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
