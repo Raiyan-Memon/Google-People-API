@@ -44,10 +44,19 @@
 
 <body>
 
+
+    {{-- @dd(Auth::user()->id) --}}
+
+    {{-- @php
+    $user = DB::select('select * from users');
+    @endphp --}}
+  
+
+
     <!-- side bar  -->
     <div class="navigation">
         <ul>
-            <li class="username active">
+            <li class="username">
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="log-in-outline"></ion-icon>
@@ -56,32 +65,32 @@
                 </a>
             </li>
             <!-- <hr class=""> -->
-            <li class="list ">
-                <a href="/users">
+            <li class="list" id="profile">
+                <a href="{{url('users', Auth::user()->id)}}">
                     <span class="icon">
                         <ion-icon name="person-outline"></ion-icon>
                     </span>
                     <span class="title">Profile</span>
                 </a>
             </li>
-            <li class="list">
-                <a href="/people">
+            <li class="list" id="contact">
+                <a href="http://127.0.0.1:8000/people" >
                     <span class="icon">
                         <ion-icon name="person-circle-outline"></ion-icon>
                     </span>
                     <span class="title">Contacts</span>
                 </a>
             </li>
-            <li class="list ">
-                <a href="/contactgroup">
+            <li class="list" id="contactgroup">
+                <a href="http://127.0.0.1:8000/contactgroup">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
                     </span>
-                    <span class="title">ContactGroups</span>
+                    <span class="title ">ContactGroups</span>
                 </a>
             </li>
-            <li class="list">
-                <a href="/othercontact">
+            <li class="list" id="othercontact">
+                <a href="http://127.0.0.1:8000/othercontact">
                     <span class="icon">
                         <ion-icon name="people-circle-outline"></ion-icon>
                     </span>

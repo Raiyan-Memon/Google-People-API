@@ -11,7 +11,7 @@
 }
 .back-button{
 position: absolute;
-top: 375px;
+top: 457px;
 left: 500px;
 }
 

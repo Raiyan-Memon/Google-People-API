@@ -10,7 +10,7 @@ body{
     /* justify-content: center; */
     /* align-items: center; */
     min-width: 100vh;
-    /* font-family: 'Poppins', 'sans-serif'; */
+    font-family: 'Poppins', 'sans-serif';
 }
 
 /* side bar */
@@ -46,8 +46,8 @@ body{
 }
 
 .navigation ul li:hover{
-    /* text-decoration: underline; */
-    background: #4187f6;
+    text-decoration: underline;
+    /* background: #4187f6; */
 }
 
 /* .navigation ul li.active{
@@ -74,7 +74,7 @@ body{
     right:0px;
     width:30px;
     height:30px;
-    background: ;
+ 
 }
 .navigation ul li a .icon{
     position: relative;

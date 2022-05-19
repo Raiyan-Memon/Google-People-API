@@ -195,7 +195,7 @@ class Helpers
 
         $url = array();
         $url['pageSize'] = '400';
-        $url['personFields'] = 'names,emailAddresses';
+        $url['personFields'] = 'names,emailAddresses,photos';
         $url['sortOrder'] = 'FIRST_NAME_ASCENDING';
         $url_people = 'https://people.googleapis.com/v1/people/me/connections?' . http_build_query($url);
 

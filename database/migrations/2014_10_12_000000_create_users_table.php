@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('access_token')->nullable();
             $table->string('refresh_token')->nullable();
+            $table->string('user_type')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -24,6 +24,12 @@
    
 </div>
 
+<div class="form-group">    
+    <label for=""><b>User_type</b></label>
+    <input type="text" class="form-control" name="user_type" value="{{$user->user_type ?? ""}}" ><br> 
+   
+</div>
+
 
 <button class="btn btn-primary">Submit</button>
 </div>
